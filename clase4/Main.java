@@ -1,9 +1,9 @@
 package org.example.B1.clase4;
 import javax.swing.JOptionPane;
 public class Main {
-       public static void main(String[] args) {
-            int intentos = 0;
-            final int MAX_INTENTOS = 3;
+    private static int intentos=0, MAX_INTENTOS = 3;
+
+    public static void main(String[] args) {
 
             while (intentos < MAX_INTENTOS) {
                 int opcion = Integer.parseInt(JOptionPane.showInputDialog(
@@ -16,33 +16,29 @@ public class Main {
                 ));
 
                 switch (opcion) {
-                    case 1:
-                        if (realizarLogin()) {
-                            JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso.");
-                            return;
-                        } else {
-                            intentos++;
-                            JOptionPane.showMessageDialog(null, "Inicio de sesión fallido. Intentos restantes: " + (MAX_INTENTOS - intentos));
-                        }
-                        break;
-                    case 2:
-                        JOptionPane.showMessageDialog(null, "Opción 2 seleccionada.");
-                        break;
-                    case 3:
-                        JOptionPane.showMessageDialog(null, "Opción 3 seleccionada.");
-                        break;
-                    case 0:
-                        JOptionPane.showMessageDialog(null, "Saliendo del programa.");
-                        return;
-                    default:
-                        JOptionPane.showMessageDialog(null, "Opción inválida. Por favor, elija una opción válida.");
+                    case 1 -> Entrar();
+                    case 2 -> JOptionPane.showMessageDialog(null, "Opción 2 seleccionada.");
+                    case 3 -> JOptionPane.showMessageDialog(null, "Opción 3 seleccionada.");
+                    case 0 -> {JOptionPane.showMessageDialog(null, "Saliendo del programa."); System.exit(-1);}
+                    default-> JOptionPane.showMessageDialog(null, "Opción inválida. Por favor, elija una opción válida.");
+                    
                 }
             }
 
             JOptionPane.showMessageDialog(null, "Usuario bloqueado. Ha excedido el número de intentos.");
         }
 
-        public static boolean realizarLogin() {
+    private static void Entrar() {
+        if (realizarLogin()) {
+            JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso.");
+            return;
+        } else {
+            intentos++;
+            JOptionPane.showMessageDialog(null, "Inicio de sesión fallido. Intentos restantes: " + (MAX_INTENTOS - intentos));
+        }
+    }
+
+    public static boolean realizarLogin() {
             String usuario = JOptionPane.showInputDialog("Ingrese su usuario:");
             String contrasena = JOptionPane.showInputDialog("Ingrese su contraseña:");
 
@@ -54,3 +50,4 @@ public class Main {
 
         }
     }
+
