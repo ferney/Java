@@ -26,6 +26,8 @@ public class Main {
             }
 
             JOptionPane.showMessageDialog(null, "Usuario bloqueado. Ha excedido el número de intentos.");
+            JOptionPane.showMessageDialog(null, "Usuario bloqueado", "ALERTA", JOptionPane.WARNING_MESSAGE);
+            System.exit(-1);
         }
 
     private static void Entrar() {
