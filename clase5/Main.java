@@ -55,4 +55,4 @@ public class Main {
     }
 
 }
-//(numero2 != 0)?""+(numero1 / numero2):"error, No se puede dividir por cero";
+
