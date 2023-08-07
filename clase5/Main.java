@@ -34,7 +34,7 @@ public class Main {
             case 4 -> Divicion(numero1, numero2);
             case 0 -> Salir();
         }
-        //JOptionPane.showMessageDialog(null, "Resultado: " + resultado);
+       
     }
 
     private static void Suma(double numero1, double numero2) {
