@@ -47,9 +47,7 @@ public class Main {
         JOptionPane.showMessageDialog(null, "Resultado: " + (numero1*numero2));
     }
     private static void Divicion(double numero1, double numero2) {
-        String resultado = (numero2 != 0)?""+(numero1 / numero2):"error, No se puede dividir por cero";
-
-        JOptionPane.showMessageDialog(null, "Resultado: " + resultado);
+       JOptionPane.showMessageDialog(null, "Resultado: " + ((numero2 != 0)?""+(numero1 / numero2):"error, No se puede dividir por cero"));
     }
     private static void Salir() {
         JOptionPane.showMessageDialog(null, "Saliendo del programa.");
