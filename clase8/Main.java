@@ -28,8 +28,12 @@ public class Main {
         try {
             double numerador =  Double.parseDouble(JOptionPane.showInputDialog("Ingrese el primer numerador:"));
             double denominador = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el denominador:"));
-            double resultado = numerador / denominador;
-            mensaje("El resultado de la división es: " + resultado);
+           if(numerador==0 || denominador==0){
+                mensaje("No se puede realizar la divición por que existe un 0");
+            }else{
+                double resultado = numerador / denominador;
+                mensaje("El resultado de la división es: " + resultado);
+            }
         } catch (ArithmeticException e) {
             mensaje("Error: División indeterminada.");
         } catch (NumberFormatException e) {
